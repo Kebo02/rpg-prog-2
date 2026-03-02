@@ -1,6 +1,13 @@
 extends CharacterBody2D
 const SPEED = 120.0
+
+var sunflower: int = 0
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+func update_hud():
+	$"../HUD/Label".text = "x " + str(sunflower)
+
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	

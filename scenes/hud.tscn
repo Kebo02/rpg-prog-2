@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bvcp28ftjoel3"]
+
+[ext_resource type="FontFile" uid="uid://6op1lmq0am5u" path="res://assets/fonts/PixelOperator8.ttf" id="1_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://bqj420v404i3x" path="res://assets/sunflower_animation.png" id="2_5ysmq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fi6k"]
+atlas = ExtResource("2_5ysmq")
+region = Rect2(17.98017, 0, 13.198322, 16.228073)
+
+[node name="HUD" type="CanvasLayer" unique_id=1232400563]
+
+[node name="Label" type="Label" parent="." unique_id=1155762989]
+offset_left = 43.0
+offset_top = 15.0
+offset_right = 88.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("1_oo0fn")
+text = "x 0"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=536628083]
+texture_filter = 1
+offset_right = 36.0
+offset_bottom = 42.0
+texture = SubResource("AtlasTexture_6fi6k")

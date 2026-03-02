@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dqgyeyu13faxu"]
+
+[ext_resource type="Script" uid="uid://xhmpm8j8tgan" path="res://scripts/sunflower.gd" id="1_vxxt0"]
+[ext_resource type="Texture2D" uid="uid://bqj420v404i3x" path="res://assets/sunflower_animation.png" id="1_yxs2d"]
+[ext_resource type="AudioStream" uid="uid://c3qcvkp5ckd85" path="res://assets/sounds/sunflower_pickup.wav" id="3_boem4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxxt0"]
+size = Vector2(9, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boem4"]
+atlas = ExtResource("1_yxs2d")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofkug"]
+atlas = ExtResource("1_yxs2d")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8whej"]
+atlas = ExtResource("1_yxs2d")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qrkhh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boem4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofkug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8whej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofkug")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="sunflower" type="Area2D" unique_id=291209356]
+script = ExtResource("1_vxxt0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1008097632]
+position = Vector2(0.5, -6)
+shape = SubResource("RectangleShape2D_vxxt0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=548482464]
+texture_filter = 1
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_qrkhh")
+autoplay = "default"
+frame_progress = 0.6355474
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1715579209]
+stream = ExtResource("3_boem4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

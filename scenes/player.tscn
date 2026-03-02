@@ -87,7 +87,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(7, 2)
+size = Vector2(9, 3)
 
 [node name="player" type="CharacterBody2D" unique_id=1510329833]
 script = ExtResource("1_g2els")
@@ -97,9 +97,8 @@ texture_filter = 1
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"walk_down"
-frame_progress = 0.82199246
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586977696]
 texture_filter = 1
-position = Vector2(-0.5, -1)
+position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_g2els")
