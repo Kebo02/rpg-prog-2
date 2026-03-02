@@ -5,6 +5,7 @@ var sunflower: int = 0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+
 func update_hud():
 	$"../HUD/Label".text = "x " + str(sunflower)
 

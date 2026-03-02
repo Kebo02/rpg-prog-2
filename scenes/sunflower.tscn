@@ -56,4 +56,19 @@ frame_progress = 0.6355474
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1715579209]
 stream = ExtResource("3_boem4")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1979568988]
+position = Vector2(-1, 0)
+emitting = false
+amount = 15
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color = Color(1, 0.81666666, 0, 1)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

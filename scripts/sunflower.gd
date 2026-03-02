@@ -10,5 +10,6 @@ func _on_body_entered(body: Node2D) -> void:
 		$AnimatedSprite2D.hide()
 		$CollisionShape2D.set_deferred("disabled",true)
 		$AudioStreamPlayer.play()
+		$CPUParticles2D.emitting = true
 		await $AudioStreamPlayer.finished
 		queue_free()
