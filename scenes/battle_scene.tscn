@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://0ivllnqgl00n"]
+
+[ext_resource type="Texture2D" uid="uid://vng5coc5dqa1" path="res://assets/entity_animation/blue_slime_walking_animation.png" id="1_kinr6"]
+[ext_resource type="Script" uid="uid://bfjhvegy7q2x2" path="res://scripts/battle_scene.gd" id="1_rca61"]
+[ext_resource type="FontFile" uid="uid://6op1lmq0am5u" path="res://assets/fonts/PixelOperator8.ttf" id="2_rca61"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rca61"]
+atlas = ExtResource("1_kinr6")
+region = Rect2(-0.054218292, -0.0005836487, 16.021774, 16.000584)
+
+[node name="battle_scene" type="CanvasLayer" unique_id=404141245]
+process_mode = 3
+script = ExtResource("1_rca61")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=580139367]
+offset_right = 1168.0
+offset_bottom = 648.0
+color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1498934236]
+texture_filter = 1
+offset_left = 488.0
+offset_top = 179.0
+offset_right = 638.0
+offset_bottom = 330.2448
+texture = SubResource("AtlasTexture_rca61")
+flip_h = true
+
+[node name="Label" type="Label" parent="." unique_id=1539318085]
+offset_left = 375.0
+offset_right = 712.72906
+offset_bottom = 179.0
+
+[node name="enemy_hp" type="ProgressBar" parent="." unique_id=1574602679]
+texture_filter = 1
+offset_left = 530.0
+offset_top = 179.0
+offset_right = 599.0
+offset_bottom = 206.0
+theme_override_fonts/font = ExtResource("2_rca61")
+
+[node name="player_hp" type="ProgressBar" parent="." unique_id=1865550831]
+texture_filter = 1
+offset_left = 7.0
+offset_top = 609.0
+offset_right = 287.0
+offset_bottom = 636.0
+theme_override_fonts/font = ExtResource("2_rca61")
+
+[node name="player_mana" type="ProgressBar" parent="." unique_id=461570513]
+texture_filter = 1
+offset_left = 7.0
+offset_top = 573.0
+offset_right = 287.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("2_rca61")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1795519276]
+offset_left = 325.0
+offset_top = 509.0
+offset_right = 775.0
+offset_bottom = 619.0
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=1132819005]
+layout_mode = 2
+text = "attack"
+
+[node name="Button2" type="Button" parent="HBoxContainer" unique_id=1311801030]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="HBoxContainer" unique_id=1118371553]
+layout_mode = 2

@@ -1,7 +1,15 @@
 extends CharacterBody2D
 const SPEED = 120.0
-
+#collectibles
 var sunflower: int = 0
+
+#attributes
+var hp: int = 10
+var max_hp: int = 10
+var mana: int = 20
+var max_mana = 20
+var dmg = 4
+
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 

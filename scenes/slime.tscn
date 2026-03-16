@@ -1,30 +1,31 @@
 [gd_scene format=3 uid="uid://dmswinjomnbgo"]
 
-[ext_resource type="Texture2D" uid="uid://b2nir7oecm2oj" path="res://assets/slime.png" id="1_371uh"]
 [ext_resource type="Script" uid="uid://doj0nyrfqlk0x" path="res://scripts/slime.tscn.gd" id="1_p2gj0"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p2gj0"]
-atlas = ExtResource("1_371uh")
-region = Rect2(0, 0, 16, 16)
+[ext_resource type="Texture2D" uid="uid://vng5coc5dqa1" path="res://assets/entity_animation/blue_slime_walking_animation.png" id="2_p2gj0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6pvg"]
-atlas = ExtResource("1_371uh")
-region = Rect2(16, 0, 16, 16)
+atlas = ExtResource("2_p2gj0")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
-atlas = ExtResource("1_371uh")
-region = Rect2(32, 0, 16, 16)
+atlas = ExtResource("2_p2gj0")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2npkn"]
-atlas = ExtResource("1_371uh")
+atlas = ExtResource("2_p2gj0")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd6lc"]
+atlas = ExtResource("2_p2gj0")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fd6lc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gstla"]
+atlas = ExtResource("2_p2gj0")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5wyi"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p2gj0")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n6pvg")
 }, {
@@ -33,25 +34,31 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2npkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd6lc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gstla")
 }],
 "loop": true,
-"name": &"slime",
+"name": &"blue_slime_walking_animation",
 "speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gstla"]
-radius = 0.72436124
+radius = 2.1730838
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5wyi"]
-radius = 47.010635
+radius = 54.00926
 
 [node name="slime" type="CharacterBody2D" unique_id=1133044125]
 script = ExtResource("1_p2gj0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1851933048]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_fd6lc")
-animation = &"slime"
+sprite_frames = SubResource("SpriteFrames_v5wyi")
+animation = &"blue_slime_walking_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=56512123]
 position = Vector2(0, 2)
