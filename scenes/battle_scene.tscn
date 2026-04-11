@@ -8,6 +8,48 @@
 atlas = ExtResource("1_kinr6")
 region = Rect2(-0.054218292, -0.0005836487, 16.021774, 16.000584)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xrod"]
+bg_color = Color(0.68, 0.07480001, 0.07480001, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ti0og"]
+bg_color = Color(0.38, 0, 0.0063332366, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt3ua"]
+bg_color = Color(0.72, 0.1368, 0.16596012, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rca61"]
+bg_color = Color(0.5764706, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg0yk"]
+bg_color = Color(0.3019608, 0.5176471, 0.85882354, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qdv8"]
+bg_color = Color(0.12156863, 0.24313726, 0.85882354, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxwbd"]
+bg_color = Color(0.7490196, 0.105882354, 0.17254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rum4d"]
+bg_color = Color(0.7490196, 0.105882354, 0.17254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gp0h"]
+bg_color = Color(0.8666667, 0, 0.003921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i8jf"]
+bg_color = Color(0.14901961, 0.34509805, 0.9098039, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oc74"]
+bg_color = Color(0.08627451, 0.6039216, 0.9764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svpld"]
+bg_color = Color(0.1882353, 0.6509804, 0.15294118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g72on"]
+bg_color = Color(0.1882353, 0.6509804, 0.15294118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tttxe"]
+bg_color = Color(0.21176471, 1, 0, 1)
+
 [node name="battle_scene" type="CanvasLayer" unique_id=404141245]
 process_mode = 3
 script = ExtResource("1_rca61")
@@ -33,11 +75,13 @@ offset_bottom = 179.0
 
 [node name="enemy_hp" type="ProgressBar" parent="." unique_id=1574602679]
 texture_filter = 1
-offset_left = 530.0
+offset_left = 505.0
 offset_top = 179.0
-offset_right = 599.0
+offset_right = 617.0
 offset_bottom = 206.0
 theme_override_fonts/font = ExtResource("2_rca61")
+theme_override_styles/background = SubResource("StyleBoxFlat_3xrod")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ti0og")
 
 [node name="player_hp" type="ProgressBar" parent="." unique_id=1865550831]
 texture_filter = 1
@@ -46,6 +90,8 @@ offset_top = 609.0
 offset_right = 287.0
 offset_bottom = 636.0
 theme_override_fonts/font = ExtResource("2_rca61")
+theme_override_styles/background = SubResource("StyleBoxFlat_yt3ua")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rca61")
 
 [node name="player_mana" type="ProgressBar" parent="." unique_id=461570513]
 texture_filter = 1
@@ -54,19 +100,39 @@ offset_top = 573.0
 offset_right = 287.0
 offset_bottom = 600.0
 theme_override_fonts/font = ExtResource("2_rca61")
+theme_override_styles/background = SubResource("StyleBoxFlat_bg0yk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8qdv8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1795519276]
 offset_left = 325.0
-offset_top = 509.0
+offset_top = 573.0
 offset_right = 775.0
-offset_bottom = 619.0
+offset_bottom = 636.0
 
-[node name="Button" type="Button" parent="HBoxContainer" unique_id=1132819005]
+[node name="Attack_button" type="Button" parent="HBoxContainer" unique_id=1132819005]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_pxwbd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rum4d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0gp0h")
 text = "attack"
 
-[node name="Button2" type="Button" parent="HBoxContainer" unique_id=1311801030]
+[node name="Defend_button" type="Button" parent="HBoxContainer" unique_id=1311801030]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_1i8jf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1i8jf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3oc74")
+text = "Defend "
 
-[node name="Button3" type="Button" parent="HBoxContainer" unique_id=1118371553]
+[node name="Flee_button" type="Button" parent="HBoxContainer" unique_id=1118371553]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_svpld")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g72on")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tttxe")
+text = "Flee"
+
+[connection signal="pressed" from="HBoxContainer/Attack_button" to="." method="_on_attack_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Defend_button" to="." method="_on_defend_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Flee_button" to="." method="_on_flee_button_pressed"]

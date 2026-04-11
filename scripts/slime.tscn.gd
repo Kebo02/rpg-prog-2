@@ -2,7 +2,9 @@ extends CharacterBody2D
 var player = null
 var speed:int = 60
 
-var hp: int = 5
+var is_in_battle = false
+
+var hp: int = 10
 var max_hp: int = 10
 var dmg = 2
 
@@ -26,7 +28,6 @@ func _physics_process(delta: float) -> void:
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		# Jeśli to gracz, odpalamy walkę!
 		if collision.get_collider().name == "player":
 			start_battle(collision.get_collider())
 	
@@ -41,8 +42,17 @@ func _on_detection_shape_body_exited(body: Node2D) -> void:
 		player = null
 		
 func start_battle(player_node):
+	if is_in_battle == true:
+		return
+	is_in_battle = true	
+	
 	var arena = BATTLE_SCENE.instantiate()
 	arena.player = player_node
 	arena.enemy = self
 	get_tree().root.add_child(arena)
 	get_tree().paused = true
+	
+	#Helper Methods <
+func stop_the_entity() -> void:
+	await get_tree().create_timer(2.0).timeout
+	is_in_battle = false

@@ -112,4 +112,4 @@ position = Vector2(-88, 76)
 position = Vector2(-74, 76)
 
 [node name="slime" parent="." unique_id=1133044125 instance=ExtResource("5_4n87g")]
-position = Vector2(151, -86)
+position = Vector2(54, -13)

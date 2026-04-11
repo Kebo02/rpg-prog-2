@@ -6,9 +6,11 @@ var sunflower: int = 0
 #attributes
 var hp: int = 10
 var max_hp: int = 10
-var mana: int = 20
-var max_mana = 20
-var dmg = 4
+var mana: int = 10
+var max_mana: int = 30
+var dmg: int = 4
+#states
+var is_defending: bool = false
 
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
