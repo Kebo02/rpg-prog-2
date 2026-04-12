@@ -9,6 +9,7 @@ var max_hp: int = 10
 var mana: int = 10
 var max_mana: int = 30
 var dmg: int = 4
+var magic_dmg = 4
 #states
 var is_defending: bool = false
 
