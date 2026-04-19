@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://vng5coc5dqa1" path="res://assets/entity_animation/blue_slime_walking_animation.png" id="1_kinr6"]
 [ext_resource type="Script" uid="uid://bfjhvegy7q2x2" path="res://scripts/battle_scene.gd" id="1_rca61"]
 [ext_resource type="FontFile" uid="uid://6op1lmq0am5u" path="res://assets/fonts/PixelOperator8.ttf" id="2_rca61"]
+[ext_resource type="FontFile" uid="uid://c6kyk7lrixu0f" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_8qdv8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rca61"]
 atlas = ExtResource("1_kinr6")
@@ -26,20 +27,23 @@ bg_color = Color(0.3019608, 0.5176471, 0.85882354, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qdv8"]
 bg_color = Color(0.12156863, 0.24313726, 0.85882354, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxwbd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mjbx"]
 bg_color = Color(0.7490196, 0.105882354, 0.17254902, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rum4d"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrwob"]
 bg_color = Color(0.7490196, 0.105882354, 0.17254902, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gp0h"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_porms"]
 bg_color = Color(0.8666667, 0, 0.003921569, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i8jf"]
-bg_color = Color(0.91, 0.40040007, 0.14560002, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hs4o"]
+bg_color = Color(0.078431375, 0.5372549, 0.8901961, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oc74"]
-bg_color = Color(0.8866537, 0.29864907, 0.07880073, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i8jf"]
+bg_color = Color(0.078431375, 0.5372549, 0.8901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6hvt"]
+bg_color = Color(0, 0.7666669, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svpld"]
 bg_color = Color(0.1882353, 0.6509804, 0.15294118, 1)
@@ -49,6 +53,33 @@ bg_color = Color(0.1882353, 0.6509804, 0.15294118, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tttxe"]
 bg_color = Color(0.21176471, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxwbd"]
+bg_color = Color(0.7490196, 0.105882354, 0.17254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rum4d"]
+bg_color = Color(0.7490196, 0.105882354, 0.17254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gp0h"]
+bg_color = Color(0.8666667, 0, 0.003921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16mmc"]
+bg_color = Color(0.74, 0.33300003, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fg2lh"]
+bg_color = Color(0.7411765, 0.33333334, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oc74"]
+bg_color = Color(0.8866537, 0.29864907, 0.07880073, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8gcu"]
+bg_color = Color(0.635, 0.26999998, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31luo"]
+bg_color = Color(0.63529414, 0.27058825, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm2tv"]
+bg_color = Color(0.7308334, 0.14999998, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05s0e"]
 bg_color = Color(0.37036446, 0.37036452, 0.37036437, 1)
@@ -63,7 +94,7 @@ bg_color = Color(0.65834, 0.65834, 0.6583396, 1)
 process_mode = 3
 script = ExtResource("1_rca61")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=580139367]
+[node name="batle_arena" type="ColorRect" parent="." unique_id=580139367]
 offset_right = 1168.0
 offset_bottom = 648.0
 color = Color(0.096204735, 0.09620475, 0.096204735, 1)
@@ -122,18 +153,18 @@ offset_bottom = 636.0
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_rca61")
-theme_override_styles/normal = SubResource("StyleBoxFlat_pxwbd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rum4d")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0gp0h")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mjbx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jrwob")
+theme_override_styles/hover = SubResource("StyleBoxFlat_porms")
 text = "attack"
 
 [node name="Defend_button" type="Button" parent="main_menu" unique_id=1311801030]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_rca61")
-theme_override_styles/normal = SubResource("StyleBoxFlat_1i8jf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hs4o")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1i8jf")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3oc74")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g6hvt")
 text = "Defend "
 
 [node name="Flee_button" type="Button" parent="main_menu" unique_id=1118371553]
@@ -165,8 +196,8 @@ text = "basic"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_rca61")
-theme_override_styles/normal = SubResource("StyleBoxFlat_1i8jf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1i8jf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_16mmc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fg2lh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3oc74")
 text = "gamble"
 
@@ -174,9 +205,9 @@ text = "gamble"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_rca61")
-theme_override_styles/normal = SubResource("StyleBoxFlat_svpld")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_g72on")
-theme_override_styles/hover = SubResource("StyleBoxFlat_tttxe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y8gcu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_31luo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dm2tv")
 text = "spell"
 
 [node name="Back_button" type="Button" parent="skills_menu" unique_id=680644494]
@@ -188,6 +219,48 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_j0cvo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_sjku2")
 text = "Back"
 
+[node name="game_over_screen" type="ColorRect" parent="." unique_id=1398827564]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1681023, 0.06978244, 0.05323354, 0.94509804)
+
+[node name="death_message" type="Label" parent="game_over_screen" unique_id=1463092937]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.035
+offset_left = 7.0
+offset_top = 115.0
+offset_right = 1152.0
+offset_bottom = 208.32
+theme_override_colors/font_color = Color(0.75445384, 0.042781867, 1.92523e-07, 1)
+theme_override_fonts/font = ExtResource("4_8qdv8")
+theme_override_font_sizes/font_size = 29
+text = "May you be reborn "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Game_over_options" type="VBoxContainer" parent="game_over_screen" unique_id=1986001902]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 330.0
+offset_right = 775.0
+offset_bottom = 491.0
+
+[node name="exit_btn" type="Button" parent="game_over_screen/Game_over_options" unique_id=506306836]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_8qdv8")
+text = "Exit"
+
+[node name="try_again_btn" type="Button" parent="game_over_screen/Game_over_options" unique_id=1235452514]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_8qdv8")
+text = "Try again"
+
 [connection signal="pressed" from="main_menu/Attack_button" to="." method="_on_attack_button_pressed"]
 [connection signal="pressed" from="main_menu/Defend_button" to="." method="_on_defend_button_pressed"]
 [connection signal="pressed" from="main_menu/Flee_button" to="." method="_on_flee_button_pressed"]
@@ -195,3 +268,5 @@ text = "Back"
 [connection signal="pressed" from="skills_menu/gamble" to="." method="_on_gamble_pressed"]
 [connection signal="pressed" from="skills_menu/spell" to="." method="_on_spell_pressed"]
 [connection signal="pressed" from="skills_menu/Back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="game_over_screen/Game_over_options/exit_btn" to="." method="_on_exit_btn_pressed"]
+[connection signal="pressed" from="game_over_screen/Game_over_options/try_again_btn" to="." method="_on_try_again_btn_pressed"]

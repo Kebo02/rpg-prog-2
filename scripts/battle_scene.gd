@@ -8,6 +8,7 @@ var enemy = null
 @onready var player_mana = $player_mana
 @onready var skills_menu = $skills_menu
 @onready var main_menu = $main_menu
+@onready var game_over_screen = $game_over_screen
 
 func _ready() -> void:
 	player_hp.max_value = player.max_hp
@@ -32,7 +33,10 @@ func player_wins() -> bool:
 		get_tree().paused = false
 		queue_free()
 		return	true
-	return false		
+	return false	
+
+
+
 #Helper Methods >
 	
 	
@@ -107,6 +111,13 @@ func _on_spell_pressed() -> void:
 	if player_wins():
 		return
 	enemy_turn()		
+func _on_try_again_btn_pressed() -> void:
+	get_tree().paused = false
+	queue_free()
+	get_tree().change_scene_to_file("res://scenes/rpg_prog_2.tscn")
+	
+func _on_exit_btn_pressed() -> void:
+	get_tree().quit()
 #Button Functions >
 
 #Enemy Attack Phase <
@@ -119,7 +130,15 @@ func enemy_turn() -> void:
 	player.is_defending = false
 	
 	if player.hp <= 0 :
-		print("Game Over")
+		var messages =  [ 
+		"May you be reborn",
+		"Your fate shall be altered",
+		]	
+		var random_index = randi()% messages.size()
+		$game_over_screen/death_message.text = messages[random_index]		
+		game_over_screen.show()
+		get_tree().paused = true
+		
 	else:
 		set_buttons_disabled(false)		
 #Enemy Attact Phase >

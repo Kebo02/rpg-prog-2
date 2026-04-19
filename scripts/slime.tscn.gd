@@ -6,7 +6,7 @@ var is_in_battle = false
 
 var hp: int = 10
 var max_hp: int = 10
-var dmg = 2
+var dmg = 8
 
 const BATTLE_SCENE = preload("res://scenes/battle_scene.tscn")
 
